@@ -26,6 +26,7 @@ return {
   },
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
+    -- Remember to come back and consider changing these per recommendation - Tomb.
     {
       '<F5>',
       function()
@@ -95,6 +96,23 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+      },
+    }
+
+    -- I think we insert out dap stuff here - Tomb.
+    dap.adapters.godot = {
+      type = 'server',
+      host = '127.0.0.1',
+      port = 6006,
+    }
+
+    dap.configurations.gdscript = {
+      {
+        type = 'godot',
+        request = 'launch',
+        name = 'Launch scene',
+        project = '${workspaceFolder}',
+        launch_scene = true,
       },
     }
 

@@ -253,8 +253,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-local projectfile = vim.fn.getcwd() .. '/project.godot'
-if projectfile then
+local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
+if gdproject then
+  io.close(gdproject)
   vim.fn.serverstart './godothost'
 end
 
@@ -1043,7 +1044,7 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
