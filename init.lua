@@ -482,31 +482,31 @@ require('lazy').setup({
       harpoon:setup()
       -- REQUIRED
 
-      vim.keymap.set('n', '<leader>a', function()
+      vim.keymap.set('n', '<F25>', function()
         harpoon:list():add()
       end)
       vim.keymap.set('n', '<C-e>', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end)
 
-      vim.keymap.set('n', '<C-h>', function()
+      vim.keymap.set('n', '<F26>', function()
         harpoon:list():select(1)
       end)
-      vim.keymap.set('n', '<C-t>', function()
+      vim.keymap.set('n', '<F27>', function()
         harpoon:list():select(2)
       end)
-      vim.keymap.set('n', '<C-n>', function()
+      vim.keymap.set('n', '<F28>', function()
         harpoon:list():select(3)
       end)
-      vim.keymap.set('n', '<C-s>', function()
+      vim.keymap.set('n', '<F29>', function()
         harpoon:list():select(4)
       end)
 
       -- Toggle previous & next buffers stored within Harpoon list
-      vim.keymap.set('n', '<leader>p', function()
+      vim.keymap.set('n', '<F30>', function()
         harpoon:list():prev()
       end)
-      vim.keymap.set('n', '<leader>n', function()
+      vim.keymap.set('n', '<F31>', function()
         harpoon:list():next()
       end)
 
